@@ -2,9 +2,11 @@
 import { ref, watch } from "vue";
 import { useTheme } from "vuetify";
 import { useThemeStore } from "~/stores/theme";
+import { useAuthStore } from "~/stores/auth";
 
 const drawer = ref(true);
 const themeStore = useThemeStore();
+const auth = useAuthStore();
 
 // Vuetify theme controller
 const theme = useTheme();
@@ -17,6 +19,11 @@ watch(
   },
   { immediate: true },
 );
+
+const signOut = () => {
+  auth.logout();
+  navigateTo("/login");
+};
 </script>
 
 <template>
@@ -35,10 +42,27 @@ watch(
         </v-icon>
       </v-btn>
 
-      <!-- Top Menu -->
-      <v-btn variant="text" to="/">Home</v-btn>
-      <v-btn variant="text">About</v-btn>
-      <v-btn variant="text">Contact</v-btn>
+      <!-- User Menu -->
+      <v-menu>
+        <template #activator="{ props }">
+          <v-btn icon v-bind="props">
+            <v-icon>mdi-account-circle</v-icon>
+          </v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item title="Profile" prepend-icon="mdi-account" />
+          <v-list-item title="Settings" prepend-icon="mdi-cog" />
+
+          <v-divider />
+
+          <v-list-item
+            title="Sign Out"
+            prepend-icon="mdi-logout"
+            @click="signOut"
+          />
+        </v-list>
+      </v-menu>
     </v-app-bar>
 
     <!-- Left Drawer -->
