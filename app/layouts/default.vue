@@ -69,6 +69,11 @@ const signOut = () => {
     <v-navigation-drawer v-model="drawer" app>
       <v-list density="compact">
         <v-list-item to="/" title="Home" prepend-icon="mdi-home" />
+        <v-list-item
+          to="/users"
+          title="Users"
+          prepend-icon="mdi-account-group"
+        />
         <v-list-item title="Dashboard" prepend-icon="mdi-view-dashboard" />
         <v-list-item title="Settings" prepend-icon="mdi-cog" />
       </v-list>
