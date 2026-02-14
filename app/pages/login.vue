@@ -24,33 +24,43 @@ const login = () => {
 </script>
 
 <template>
-  <v-card width="420" class="pa-6">
-    <h2 class="text-h5 mb-4 text-center">Welcome Back</h2>
+  <v-row>
+    <v-col cols="12" md="6" class="d-flex align-center">
+      <img src="/images/logo-1.png" alt="Logo" width="280" />
+    </v-col>
+  </v-row>
 
-    <v-text-field
-      v-model="email"
-      label="Email"
-      type="email"
-      prepend-inner-icon="mdi-email"
-      variant="outlined"
-      class="mb-3"
-    />
+  <v-row>
+    <v-col>
+      <v-card width="420" class="pa-6">
+        <h2 class="text-h5 mb-4 text-center">Login</h2>
 
-    <v-text-field
-      v-model="password"
-      label="Password"
-      type="password"
-      prepend-inner-icon="mdi-lock"
-      variant="outlined"
-      class="mb-6"
-    />
+        <v-text-field
+          v-model="email"
+          label="Email"
+          type="email"
+          prepend-inner-icon="mdi-email"
+          variant="outlined"
+          class="mb-3"
+        />
 
-    <v-btn block color="primary" :loading="loading" @click="login">
-      Login
-    </v-btn>
+        <v-text-field
+          v-model="password"
+          label="Password"
+          type="password"
+          prepend-inner-icon="mdi-lock"
+          variant="outlined"
+          class="mb-6"
+        />
 
-    <div class="text-center mt-4">
-      <v-btn variant="text" size="small">Forgot password?</v-btn>
-    </div>
-  </v-card>
+        <v-btn block color="primary" :loading="loading" @click="login">
+          Login
+        </v-btn>
+
+        <div class="text-center mt-4">
+          <v-btn variant="text" size="small">Forgot password?</v-btn>
+        </div>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>

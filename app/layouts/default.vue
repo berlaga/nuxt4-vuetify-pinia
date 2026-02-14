@@ -32,7 +32,7 @@ const signOut = () => {
     <v-app-bar color="primary" dark>
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <v-toolbar-title>My Nuxt 4 App</v-toolbar-title>
-
+      <img src="/images/logo-5.png" alt="Logo" width="120" />
       <v-spacer />
 
       <!-- Theme Toggle -->

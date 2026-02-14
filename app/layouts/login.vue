@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <v-main>
-      <v-container class="fill-height d-flex align-center justify-center">
+      <v-container
+        class="fill-height d-flex flex-column align-center justify-center"
+      >
         <slot />
       </v-container>
     </v-main>
