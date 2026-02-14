@@ -9,7 +9,7 @@ export type User = {
 };
 
 export default defineEventHandler(async () => {
-  const filePath = path.resolve(process.cwd(), "server", "users.json");
+  const filePath = path.join(process.cwd(), "public", "data", "users.json");
   const file = await readFile(filePath, "utf-8");
   const parsed = JSON.parse(file);
   const rawUsers: any[] = parsed?.users ?? parsed ?? [];
