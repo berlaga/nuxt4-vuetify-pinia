@@ -1,7 +1,22 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
+import { useTheme } from "vuetify";
+import { useThemeStore } from "~/stores/theme";
 
 const drawer = ref(true);
+const themeStore = useThemeStore();
+
+// Vuetify theme controller
+const theme = useTheme();
+
+// Sync Pinia → Vuetify
+watch(
+  () => themeStore.dark,
+  (isDark) => {
+    theme.change(isDark ? "dark" : "light");
+  },
+  { immediate: true },
+);
 </script>
 
 <template>
@@ -12,6 +27,13 @@ const drawer = ref(true);
       <v-toolbar-title>My Nuxt 4 App</v-toolbar-title>
 
       <v-spacer />
+
+      <!-- Theme Toggle -->
+      <v-btn icon variant="text" @click="themeStore.toggle()">
+        <v-icon>
+          {{ themeStore.dark ? "mdi-weather-sunny" : "mdi-weather-night" }}
+        </v-icon>
+      </v-btn>
 
       <!-- Top Menu -->
       <v-btn variant="text" to="/">Home</v-btn>

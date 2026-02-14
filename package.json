@@ -8,6 +8,7 @@
         "preview": "nuxt preview"
     },
     "dependencies": {
+        "@mdi/font": "^7.4.47",
         "nuxt": "latest",
         "pinia": "^2.1.7",
         "vuetify": "^3.6.0"
