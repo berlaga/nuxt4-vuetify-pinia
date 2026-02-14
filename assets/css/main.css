@@ -1,7 +1,8 @@
 /* Global styles */
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Humanist", sans-serif;
+  font-size: 16px;
 }
 
 /* Example utility classes */
@@ -15,4 +16,12 @@ body {
 
 .rounded {
   border-radius: 8px;
+}
+
+p.counter {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #65a038;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
