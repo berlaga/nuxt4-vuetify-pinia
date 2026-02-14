@@ -7,6 +7,11 @@ A clean starter template using:
 - Pinia (Nuxt plugin)
 - SSR‑compatible
 - No outdated Nuxt‑Vuetify modules
+- Main and login pages to demonstrate routing
+- Custom layout for login page
+- Light and dark Vuetify themes with switcher
+- Simple Vuetify layout with top menu, footer and left drawer
+- Drop-out menu with links
 
 ---
 
@@ -15,4 +20,10 @@ A clean starter template using:
 ```bash
 pnpm install
 pnpm dev
+```
+
+## 🔨 Deploy To Production
+
+```bash
+pnpm build
 ```
