@@ -4,7 +4,7 @@ import { useTheme } from "vuetify";
 import { useThemeStore } from "~/stores/theme";
 import { useAuthStore } from "~/stores/auth";
 
-const drawer = ref(true);
+const drawer = ref(false);
 const themeStore = useThemeStore();
 const auth = useAuthStore();
 
