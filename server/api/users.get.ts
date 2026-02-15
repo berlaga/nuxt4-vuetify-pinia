@@ -1,5 +1,4 @@
-import { readFile } from "fs/promises";
-import path from "path";
+import userData from "../../public/data/users.json";
 
 export type User = {
   firstName: string;
@@ -9,10 +8,7 @@ export type User = {
 };
 
 export default defineEventHandler(async () => {
-  const filePath = path.join(process.cwd(), "public", "data", "users.json");
-  const file = await readFile(filePath, "utf-8");
-  const parsed = JSON.parse(file);
-  const rawUsers: any[] = parsed?.users ?? parsed ?? [];
+  const rawUsers: any[] = userData?.users ?? userData ?? [];
 
   const users: User[] = rawUsers.map((u: any) => ({
     firstName: u.firstName ?? u.first_name ?? "",
